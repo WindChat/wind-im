@@ -9,8 +9,8 @@
 
 **源码仓库**
 
-> * **GitHub地址**: https://github.com/WindChat/wind-im.git
-> * **Gitee地址**: https://gitee.com/wind-chat/wind-im.git
+> * **GitHub地址** : https://github.com/WindChat/wind-im.git
+> * **Gitee地址** : https://gitee.com/wind-chat/wind-im.git
 
 
 
@@ -84,8 +84,14 @@ WindChat Team版本 命令：
 
 **2. 下载客户端**
 
-> * [Android 等待开源]()
-> * [iOS 等待开源]()
+Android  客户端：
+> * [Android 源码地址GitHub](https://github.com/WindChat/wind-android.git)
+> * GitHube地址 ： https://github.com/WindChat/wind-android.git
+> * [Android 源码地址Gitee](https://gitee.com/wind-chat/wind-android.git)
+> * Gitee地址 ：(https://gitee.com/wind-chat/wind-android.git)
+
+iOS  客户端：
+> iOS 暂未开源，预计2020-06-14 开源
 
 
 **3. 访问站点**
