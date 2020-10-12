@@ -80,7 +80,7 @@ public class U2MessageWebSyncHandler extends AbstractU2Handler<Command> {
                         put("timeServer", System.currentTimeMillis());
                     }};
                     // 构建HTTP URL
-                    String requestUrl = "http://localhost:8000//?action=" + action + "&body_format=json&miniProgramId=" + programId;
+                    String requestUrl = "http://192.168.3.12:8000//?action=" + action + "&body_format=json&miniProgramId=" + programId;
                     // AES 加密
 
                     byte[] encrptData = AESCrypto.encrypt(programSecret.getBytes(), GsonUtils.toJson(data).getBytes());
