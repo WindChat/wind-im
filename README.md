@@ -17,7 +17,7 @@
 简介
 ----
 
-WindChat 是一款开源免费私有IM聊天软件，原身是Akaxin即时通讯开源软件，由原开发者SAM2O2O个人维护，主要面向企业定制IM,全端开源，免费。
+WindChat 是一款开源免费私有IM聊天软件，由核心开发者SAM2O2O等维护，主要面向企业定制IM，开源、免费。
 
 特性：
 
@@ -85,13 +85,10 @@ WindChat Team版本 命令：
 **2. 下载客户端**
 
 Android  客户端：
-> * [Android 源码地址GitHub](https://github.com/WindChat/wind-android.git)
-> * GitHube地址 ： https://github.com/WindChat/wind-android.git
-> * [Android 源码地址Gitee](https://gitee.com/wind-chat/wind-android.git)
-> * Gitee地址 ：(https://gitee.com/wind-chat/wind-android.git)
+> Android 端暂未开源，敬请期待
 
 iOS  客户端：
-> iOS 暂未开源，预计2020-06-14 开源
+> iOS 端暂未开源，敬请期待
 
 
 **3. 访问站点**
@@ -120,6 +117,7 @@ iOS  客户端：
 WindChat 具有灵活、强大的扩展机制 `(“管理平台” 就是一个扩展)`。通过嵌入WEB页面，与后端的扩展API进行交互， 可以很轻松的构建丰富的业务功能，如：
 
 * 附近交友
+* 线上打卡
 * 店铺点评
 * 在线游戏
 * 等等等等
