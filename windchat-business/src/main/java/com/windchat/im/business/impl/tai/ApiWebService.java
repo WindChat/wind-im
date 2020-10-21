@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,7 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import com.windchat.im.business.impl.AbstractRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.site.ApiWebAuthProto;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CommandConst;
@@ -27,9 +23,12 @@ import com.windchat.common.constant.ErrorCode2;
 import com.windchat.common.constant.IErrorCode;
 import com.windchat.common.exceptions.ZalyException;
 import com.windchat.common.logs.LogUtils;
-import com.akaxin.proto.site.ApiWebAuthProto;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.cache.WebSessionCache;
 import com.windchat.im.business.impl.AbstractRequest;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * webim服务
@@ -37,9 +36,11 @@ import com.windchat.im.business.impl.AbstractRequest;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2017.11.25 15:10:36
  */
+@ApiActions(action = "api.web")
 public class ApiWebService extends AbstractRequest {
 	private static final Logger logger = LoggerFactory.getLogger(ApiWebService.class);
 
+	@ApiActions(action = ".auth")
 	public CommandResponse auth(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;

@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 package com.windchat.common.constant;
 
 public interface IErrorCode {
-	public String getCode();
+	String getCode();
 
-	public String getInfo();
+	String getInfo();
 
-	public boolean isSuccess();
+	boolean isSuccess();
 
-	public String toString();
+	String toString();
 }

@@ -15,23 +15,21 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import com.windchat.im.business.impl.AbstractRequest;
-import com.windchat.im.business.utils.FilePathUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.core.FileProto;
+import com.akaxin.proto.site.ApiFileDownloadProto;
+import com.akaxin.proto.site.ApiFileUploadProto;
+import com.google.protobuf.ByteString;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.ErrorCode2;
 import com.windchat.common.logs.LogUtils;
-import com.akaxin.proto.core.FileProto;
-import com.akaxin.proto.site.ApiFileDownloadProto;
-import com.akaxin.proto.site.ApiFileUploadProto;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.impl.AbstractRequest;
 import com.windchat.im.business.utils.FilePathUtils;
 import com.windchat.im.business.utils.FileServerUtils;
-import com.google.protobuf.ByteString;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 文件（图片，语音）上传下载
@@ -39,9 +37,11 @@ import com.google.protobuf.ByteString;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2018-01-25 17:52:08
  */
+@ApiActions(action = "api.file")
 public class ApiFileService extends AbstractRequest {
 	private static Logger logger = LoggerFactory.getLogger(ApiFileService.class);
 
+	@ApiActions(action = ".upload")
 	public CommandResponse upload(Command command) {
 		CommandResponse commandResponse = new CommandResponse();
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -66,6 +66,7 @@ public class ApiFileService extends AbstractRequest {
 		return commandResponse.setErrCode2(errCode);
 	}
 
+	@ApiActions(action = ".download")
 	public CommandResponse download(Command command) {
 		CommandResponse commandResponse = new CommandResponse();
 		ErrorCode2 errCode = ErrorCode2.ERROR;

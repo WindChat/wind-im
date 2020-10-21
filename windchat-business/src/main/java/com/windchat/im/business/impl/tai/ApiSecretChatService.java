@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,23 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import com.windchat.im.business.impl.AbstractRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.core.ConfigProto;
+import com.akaxin.proto.core.DeviceProto;
+import com.akaxin.proto.site.ApiSecretChatApplyU2Proto;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CommandConst;
 import com.windchat.common.constant.ErrorCode2;
 import com.windchat.common.logs.LogUtils;
-import com.akaxin.proto.core.ConfigProto;
-import com.akaxin.proto.core.DeviceProto;
-import com.akaxin.proto.site.ApiSecretChatApplyU2Proto;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.impl.AbstractRequest;
 import com.windchat.im.business.impl.site.SiteConfig;
 import com.windchat.im.storage.api.IUserDeviceDao;
 import com.windchat.im.storage.bean.UserDeviceBean;
 import com.windchat.im.storage.service.DeviceDaoService;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 用户开启二人／群聊 绝密聊天
@@ -40,6 +39,7 @@ import com.windchat.im.storage.service.DeviceDaoService;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2017.10.20
  */
+@ApiActions(action = "api.secretChat")
 public class ApiSecretChatService extends AbstractRequest {
 	private static final Logger logger = LoggerFactory.getLogger(ApiSecretChatService.class);
 	private IUserDeviceDao userDeviceDao = new DeviceDaoService();
@@ -50,6 +50,7 @@ public class ApiSecretChatService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".applyU2")
 	public CommandResponse applyU2(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;

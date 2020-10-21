@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,6 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import java.util.List;
-
-import com.windchat.im.business.dao.UserFriendDao;
-import com.windchat.im.business.dao.UserProfileDao;
-import com.windchat.im.business.impl.AbstractRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.windchat.common.command.Command;
-import com.windchat.common.command.CommandResponse;
-import com.windchat.common.constant.CommandConst;
-import com.windchat.common.constant.ErrorCode2;
-import com.windchat.common.constant.IErrorCode;
-import com.windchat.common.exceptions.ZalyException2;
-import com.windchat.common.logs.LogUtils;
-import com.windchat.common.utils.StringHelper;
 import com.akaxin.proto.core.UserProto;
 import com.akaxin.proto.site.ApiFriendApplyCountProto;
 import com.akaxin.proto.site.ApiFriendApplyListProto;
@@ -45,6 +28,15 @@ import com.akaxin.proto.site.ApiFriendRemarkProto;
 import com.akaxin.proto.site.ApiFriendSettingProto;
 import com.akaxin.proto.site.ApiFriendUpdateMuteProto;
 import com.akaxin.proto.site.ApiFriendUpdateSettingProto;
+import com.windchat.common.command.Command;
+import com.windchat.common.command.CommandResponse;
+import com.windchat.common.constant.CommandConst;
+import com.windchat.common.constant.ErrorCode2;
+import com.windchat.common.constant.IErrorCode;
+import com.windchat.common.exceptions.ZalyException2;
+import com.windchat.common.logs.LogUtils;
+import com.windchat.common.utils.StringHelper;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.dao.UserFriendDao;
 import com.windchat.im.business.dao.UserProfileDao;
 import com.windchat.im.business.impl.AbstractRequest;
@@ -55,6 +47,11 @@ import com.windchat.im.storage.bean.ApplyFriendBean;
 import com.windchat.im.storage.bean.ApplyUserBean;
 import com.windchat.im.storage.bean.SimpleUserBean;
 import com.windchat.im.storage.bean.UserFriendBean;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -73,6 +70,7 @@ import com.windchat.im.storage.bean.UserFriendBean;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2017.11.24 18:36:59
  */
+@ApiActions(action = "api.friend")
 public class ApiFriendService extends AbstractRequest {
 	private static final Logger logger = LoggerFactory.getLogger(ApiFriendService.class);
 
@@ -82,6 +80,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".profile")
 	public CommandResponse profile(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -156,6 +155,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".list")
 	public CommandResponse list(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -210,6 +210,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".apply")
 	public CommandResponse apply(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;
@@ -270,6 +271,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".applyList")
 	public CommandResponse applyList(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -309,6 +311,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".applyCount")
 	public CommandResponse applyCount(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -336,6 +339,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".applyResult")
 	public CommandResponse applyResult(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -382,6 +386,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".delete")
 	public CommandResponse delete(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -413,6 +418,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".setting")
 	public CommandResponse setting(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -451,6 +457,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".updateSetting")
 	public CommandResponse updateSetting(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -488,6 +495,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".mute")
 	public CommandResponse mute(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -520,6 +528,7 @@ public class ApiFriendService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".updateMute")
 	public CommandResponse updateMute(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -548,6 +557,13 @@ public class ApiFriendService extends AbstractRequest {
 		return commandResponse.setErrCode2(errCode);
 	}
 
+	/**
+	 * 设置好友备注
+	 *
+	 * @param command
+	 * @return
+	 */
+	@ApiActions(action =".remark")
 	public CommandResponse remark(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;

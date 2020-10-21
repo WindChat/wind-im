@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ import io.netty.util.concurrent.GenericFutureListener;
  * 
  * @author Sam
  * @since 2017.10.19
- *
- * @param <Command>
  */
 public class WSRequestHandler extends AbstractCommonHandler<Command, CommandResponse> {
 	private static final Logger logger = LoggerFactory.getLogger(WSRequestHandler.class);

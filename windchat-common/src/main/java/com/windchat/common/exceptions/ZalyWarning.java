@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package com.windchat.common.exceptions;
 
 import com.windchat.common.constant.IErrorCode;
-import com.windchat.common.constant.IErrorCode;
 
 /**
  * 自定义API请求过程中产生的特殊异常
@@ -24,14 +23,14 @@ import com.windchat.common.constant.IErrorCode;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2018-04-09 12:32:08
  */
-public class ZalyException extends Exception {
+public class ZalyWarning extends Exception {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private IErrorCode errCode;
 
-	public ZalyException(IErrorCode errCode) {
+	public ZalyWarning(IErrorCode errCode) {
 		super(errCode.toString());
 		this.errCode = errCode;
 	}
