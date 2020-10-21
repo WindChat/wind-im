@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,21 +15,10 @@
  */
 package com.windchat.common.netty;
 
-import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.SSLEngine;
-
-import com.windchat.common.command.RedisCommand;
-import com.windchat.common.netty.codec.MessageDecoder;
-import com.windchat.common.ssl.ZalySSLContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.windchat.common.command.RedisCommand;
 import com.windchat.common.netty.codec.MessageDecoder;
 import com.windchat.common.netty.codec.MessageEncoder;
 import com.windchat.common.ssl.ZalySSLContext;
-
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -50,6 +39,11 @@ import io.netty.util.concurrent.GenericFutureListener;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import io.netty.util.concurrent.Promise;
 import io.netty.util.concurrent.SucceededFuture;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.net.ssl.SSLEngine;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Sam{@link an.guoyue254@gmail.com}
@@ -110,7 +104,7 @@ public class PlatformSSLClient {
 					this.channelPromise = connectFuture.channel().newPromise();
 
 				} catch (Exception e) {
-					logger.error("connect to akaxin platform error.", e);
+					logger.error("connect to WindChat platform error.", e);
 				}
 
 			}

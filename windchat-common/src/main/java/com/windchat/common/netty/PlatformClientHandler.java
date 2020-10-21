@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,13 @@
  */
 package com.windchat.common.netty;
 
-import com.windchat.common.command.Command;
-import com.windchat.common.command.RedisCommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.windchat.common.command.Command;
-import com.windchat.common.command.RedisCommand;
 import com.akaxin.proto.core.CoreProto;
-
+import com.windchat.common.command.Command;
+import com.windchat.common.command.RedisCommand;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Sam{@link an.guoyue254@gmail.com}

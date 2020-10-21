@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,23 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import java.util.List;
-
-import com.windchat.im.business.dao.UserDeviceDao;
-import com.windchat.im.business.impl.AbstractRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.windchat.common.command.Command;
-import com.windchat.common.command.CommandResponse;
-import com.windchat.common.constant.ErrorCode2;
-import com.windchat.common.logs.LogUtils;
 import com.akaxin.proto.core.DeviceProto;
 import com.akaxin.proto.site.ApiDeviceBoundListProto;
 import com.akaxin.proto.site.ApiDeviceListProto;
 import com.akaxin.proto.site.ApiDeviceProfileProto;
+import com.windchat.common.command.Command;
+import com.windchat.common.command.CommandResponse;
+import com.windchat.common.constant.ErrorCode2;
+import com.windchat.common.logs.LogUtils;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.dao.UserDeviceDao;
 import com.windchat.im.business.impl.AbstractRequest;
 import com.windchat.im.storage.bean.UserDeviceBean;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 /**
  * 
@@ -41,9 +39,11 @@ import com.windchat.im.storage.bean.UserDeviceBean;
  * @since 2017.10.20
  *
  */
+@ApiActions(action = "api.device")
 public class ApiDeviceService extends AbstractRequest {
 	private static final Logger logger = LoggerFactory.getLogger(ApiDeviceService.class);
 
+	@ApiActions(action = ".profile")
 	public CommandResponse profile(Command command) {
 		CommandResponse commandResponse = new CommandResponse();
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -76,6 +76,7 @@ public class ApiDeviceService extends AbstractRequest {
 		return commandResponse.setErrCode2(errCode);
 	}
 
+	@ApiActions(action = ".list")
 	public CommandResponse list(Command command) {
 		CommandResponse commandResponse = new CommandResponse();
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -116,6 +117,7 @@ public class ApiDeviceService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".boundList")
 	public CommandResponse boundList(Command command) {
 		CommandResponse commandResponse = new CommandResponse();
 		ErrorCode2 errCode = ErrorCode2.ERROR;

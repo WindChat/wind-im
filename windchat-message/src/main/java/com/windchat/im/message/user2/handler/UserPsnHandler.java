@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
  */
 package com.windchat.im.message.user2.handler;
 
-import java.util.List;
-
-import com.windchat.im.message.dao.ImUserSessionDao;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.client.ImStcPsnProto;
 import com.windchat.common.channel.ChannelWriter;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CommandConst;
 import com.windchat.common.constant.ErrorCode2;
 import com.windchat.common.logs.LogUtils;
-import com.akaxin.proto.client.ImStcPsnProto;
 import com.windchat.im.message.dao.ImUserSessionDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class UserPsnHandler extends AbstractU2Handler<Command> {
 	private static final Logger logger = LoggerFactory.getLogger(UserPsnHandler.class);

@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ package com.windchat.im.business.constant;
  * @since 2017-12-28 14:38:15
  */
 public interface NoticeText {
-	public String USER_ADD_FRIEND = "我通过了你的好友验证，现在可以开始聊天了";
-	public String USER_ADD_GROUP = " 加入了群聊";
+	String USER_ADD_FRIEND = "我通过了你的好友验证，现在可以开始聊天了";
+	String USER_ADD_GROUP = " 加入了群聊";
 
-	public String USER_ADD_GROUP_QR_CODE = " 通过群组二维码加入群聊";
+	String USER_ADD_GROUP_QR_CODE = " 通过群组二维码加入群聊";
 
 }

@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,17 @@
  */
 package com.windchat.im.message.web.chat;
 
-import com.windchat.im.message.dao.ImUserFriendDao;
-import com.windchat.im.message.dao.ImUserProfileDao;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.windchat.common.command.Command;
-import com.windchat.common.logs.LogUtils;
-import com.windchat.common.utils.StringHelper;
 import com.akaxin.proto.core.CoreProto;
 import com.akaxin.proto.core.UserProto;
 import com.akaxin.proto.site.ImCtsMessageProto;
+import com.windchat.common.command.Command;
+import com.windchat.common.logs.LogUtils;
+import com.windchat.common.utils.StringHelper;
 import com.windchat.im.message.dao.ImUserFriendDao;
 import com.windchat.im.message.dao.ImUserProfileDao;
 import com.windchat.im.storage.bean.SimpleUserBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * web消息检测
