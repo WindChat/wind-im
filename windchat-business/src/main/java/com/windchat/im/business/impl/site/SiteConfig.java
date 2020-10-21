@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,20 @@
  */
 package com.windchat.im.business.impl.site;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import com.akaxin.proto.core.ConfigProto;
 import com.windchat.im.business.constant.GroupConfig;
 import com.windchat.im.business.dao.SiteConfigDao;
+import com.windchat.im.message.utils.SiteConfigHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.akaxin.proto.core.ConfigProto;
-import com.windchat.im.business.constant.GroupConfig;
-import com.windchat.im.business.dao.SiteConfigDao;
-import com.windchat.im.message.utils.SiteConfigHelper;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 管理站点配置相关信息

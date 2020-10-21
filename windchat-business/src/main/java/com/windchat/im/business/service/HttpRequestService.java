@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,6 @@
  */
 package com.windchat.im.business.service;
 
-import com.windchat.im.business.api.IRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CommandConst;
@@ -32,6 +28,8 @@ import com.windchat.im.business.impl.hai.HttpPushService;
 import com.windchat.im.business.impl.hai.HttpSessionService;
 import com.windchat.im.business.impl.hai.HttpSiteService;
 import com.windchat.im.business.impl.hai.HttpUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Http请求服务分发

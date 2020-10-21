@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,16 @@
  */
 package com.windchat.im.message.user2.handler;
 
-import com.windchat.im.message.bean.WebBean;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.windchat.common.command.Command;
-import com.windchat.common.logs.LogUtils;
 import com.akaxin.proto.core.CoreProto;
 import com.akaxin.proto.site.ImCtsMessageProto;
+import com.windchat.common.command.Command;
+import com.windchat.common.logs.LogUtils;
 import com.windchat.im.message.bean.WebBean;
 import com.windchat.im.storage.api.IMessageDao;
 import com.windchat.im.storage.bean.U2MessageBean;
 import com.windchat.im.storage.service.MessageDaoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class U2MessageWebNoticeHandler extends AbstractU2Handler<Command> {
 	private static final Logger logger = LoggerFactory.getLogger(U2MessageWebNoticeHandler.class);

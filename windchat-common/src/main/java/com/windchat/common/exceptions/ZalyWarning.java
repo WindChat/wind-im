@@ -13,16 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. 
  */
-package com.windchat.im.connector.codec.protocol;
+package com.windchat.common.exceptions;
+
+import com.windchat.common.constant.IErrorCode;
 
 /**
+ * 自定义API请求过程中产生的特殊异常
  * 
- * @author Sam{@link anguoyue254@gmail.com}
- * @since 2017-09-27
- *
+ * @author Sam{@link an.guoyue254@gmail.com}
+ * @since 2018-04-09 12:32:08
  */
-public enum ReplaySignal {
-	START_POINT, // start
-	HEADER_POINT, // head
-	BODY_POINT;// body
+public class ZalyWarning extends Exception {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+	private IErrorCode errCode;
+
+	public ZalyWarning(IErrorCode errCode) {
+		super(errCode.toString());
+		this.errCode = errCode;
+	}
+
+	public IErrorCode getErrCode() {
+		return this.errCode;
+	}
 }

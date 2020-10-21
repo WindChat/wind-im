@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package com.windchat.common.netty;
 
 import com.windchat.common.command.RedisCommand;
-import com.windchat.common.command.RedisCommand;
 
 /**
  * 
@@ -26,10 +25,10 @@ import com.windchat.common.command.RedisCommand;
  */
 public interface IRedisCommandResponse {
 
-	public RedisCommand getRedisCommand();
+	RedisCommand getRedisCommand();
 
-	public boolean isSuccess();
+	boolean isSuccess();
 
-	public String getErrInfo();
+	String getErrInfo();
 
 }

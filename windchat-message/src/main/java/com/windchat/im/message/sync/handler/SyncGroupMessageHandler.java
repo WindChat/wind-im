@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,11 @@
  */
 package com.windchat.im.message.sync.handler;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.windchat.im.message.bean.WebBean;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.client.ImStcMessageProto;
+import com.akaxin.proto.core.CoreProto;
+import com.akaxin.proto.core.CoreProto.MsgType;
+import com.akaxin.proto.site.ImSyncMessageProto;
+import com.google.protobuf.ByteString;
 import com.windchat.common.channel.ChannelSession;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.RedisCommand;
@@ -31,10 +27,6 @@ import com.windchat.common.constant.CommandConst;
 import com.windchat.common.logs.LogUtils;
 import com.windchat.common.utils.GsonUtils;
 import com.windchat.common.utils.StringHelper;
-import com.akaxin.proto.client.ImStcMessageProto;
-import com.akaxin.proto.core.CoreProto;
-import com.akaxin.proto.core.CoreProto.MsgType;
-import com.akaxin.proto.site.ImSyncMessageProto;
 import com.windchat.im.message.bean.WebBean;
 import com.windchat.im.message.utils.NumUtils;
 import com.windchat.im.storage.api.IGroupDao;
@@ -42,9 +34,14 @@ import com.windchat.im.storage.api.IMessageDao;
 import com.windchat.im.storage.bean.GroupMessageBean;
 import com.windchat.im.storage.service.GroupDaoService;
 import com.windchat.im.storage.service.MessageDaoService;
-import com.google.protobuf.ByteString;
-
 import io.netty.channel.Channel;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 同步群组消息

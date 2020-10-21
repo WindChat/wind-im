@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,12 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.windchat.im.business.dao.UserFriendDao;
-import com.windchat.im.business.dao.UserProfileDao;
-import com.windchat.im.business.impl.AbstractRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.core.UserProto;
+import com.akaxin.proto.site.ApiUserMuteProto;
+import com.akaxin.proto.site.ApiUserProfileProto;
+import com.akaxin.proto.site.ApiUserSearchProto;
+import com.akaxin.proto.site.ApiUserUpdateMuteProto;
+import com.akaxin.proto.site.ApiUserUpdateProfileProto;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CommandConst;
@@ -34,17 +30,18 @@ import com.windchat.common.exceptions.ZalyException2;
 import com.windchat.common.logs.LogUtils;
 import com.windchat.common.utils.StringHelper;
 import com.windchat.common.utils.ValidatorPattern;
-import com.akaxin.proto.core.UserProto;
-import com.akaxin.proto.site.ApiUserMuteProto;
-import com.akaxin.proto.site.ApiUserProfileProto;
-import com.akaxin.proto.site.ApiUserSearchProto;
-import com.akaxin.proto.site.ApiUserUpdateMuteProto;
-import com.akaxin.proto.site.ApiUserUpdateProfileProto;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.dao.UserFriendDao;
 import com.windchat.im.business.dao.UserProfileDao;
 import com.windchat.im.business.impl.AbstractRequest;
 import com.windchat.im.storage.bean.UserFriendBean;
 import com.windchat.im.storage.bean.UserProfileBean;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 用户个人自身资料相关功能
@@ -52,6 +49,7 @@ import com.windchat.im.storage.bean.UserProfileBean;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2017.11.25 15:10:36
  */
+@ApiActions(action = "api.user")
 public class ApiUserService extends AbstractRequest {
 	private static final Logger logger = LoggerFactory.getLogger(ApiUserService.class);
 
@@ -61,6 +59,7 @@ public class ApiUserService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".search")
 	public CommandResponse search(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;
@@ -150,6 +149,7 @@ public class ApiUserService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".profile")
 	public CommandResponse profile(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errorCode = ErrorCode2.ERROR;
@@ -206,6 +206,7 @@ public class ApiUserService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".updateProfile")
 	public CommandResponse updateProfile(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;
@@ -271,6 +272,13 @@ public class ApiUserService extends AbstractRequest {
 		return commandResponse.setErrCode(errCode);
 	}
 
+	/**
+	 * 获取消息免打扰状态
+	 *
+	 * @param command
+	 * @return
+	 */
+	@ApiActions(action = ".mute")
 	public CommandResponse mute(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -290,6 +298,13 @@ public class ApiUserService extends AbstractRequest {
 		return commandResponse.setErrCode2(errCode);
 	}
 
+	/**
+	 * 设置消息免打扰状态
+	 *
+	 * @param command
+	 * @return
+	 */
+	@ApiActions(action = ".updateMute")
 	public CommandResponse updateMute(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;

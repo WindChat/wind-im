@@ -1,5 +1,5 @@
 /** 
- * Copyright 2018-2028 Akaxin Group
+ * Copyright 2018-2028 WindChat Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,12 @@
  */
 package com.windchat.im.business.impl.tai;
 
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-
-//import org.apache.commons.codec.binary.Base64;
-import com.windchat.im.business.dao.SitePluginDao;
-import com.windchat.im.business.impl.AbstractRequest;
-import com.windchat.im.business.impl.site.SiteConfig;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.akaxin.proto.core.CoreProto;
+import com.akaxin.proto.core.PluginProto;
+import com.akaxin.proto.site.ApiPluginListProto;
+import com.akaxin.proto.site.ApiPluginPageProto;
+import com.akaxin.proto.site.ApiPluginProxyProto;
+import com.google.protobuf.ByteString;
 import com.windchat.common.command.Command;
 import com.windchat.common.command.CommandResponse;
 import com.windchat.common.constant.CharsetCoding;
@@ -37,16 +31,18 @@ import com.windchat.common.crypto.AESCrypto;
 import com.windchat.common.exceptions.ZalyException2;
 import com.windchat.common.http.ZalyHttpClient;
 import com.windchat.common.logs.LogUtils;
-import com.akaxin.proto.core.CoreProto;
-import com.akaxin.proto.core.PluginProto;
-import com.akaxin.proto.site.ApiPluginListProto;
-import com.akaxin.proto.site.ApiPluginPageProto;
-import com.akaxin.proto.site.ApiPluginProxyProto;
+import com.windchat.im.business.bean.ApiActions;
 import com.windchat.im.business.dao.SitePluginDao;
 import com.windchat.im.business.impl.AbstractRequest;
 import com.windchat.im.business.impl.site.SiteConfig;
 import com.windchat.im.storage.bean.PluginBean;
-import com.google.protobuf.ByteString;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Base64;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 处理客户端与服务点扩展之间功能
@@ -54,6 +50,7 @@ import com.google.protobuf.ByteString;
  * @author Sam{@link an.guoyue254@gmail.com}
  * @since 2017-12-11 14:46:28
  */
+@ApiActions(action = "api.plugin")
 public class ApiPluginService extends AbstractRequest {
 	private static Logger logger = LoggerFactory.getLogger(ApiPluginService.class);
 	private static final String HTTP_PREFFIX = "http://";
@@ -65,6 +62,7 @@ public class ApiPluginService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".list")
 	public CommandResponse list(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		IErrorCode errCode = ErrorCode2.ERROR;
@@ -134,6 +132,7 @@ public class ApiPluginService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".page")
 	public CommandResponse page(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
@@ -209,6 +208,7 @@ public class ApiPluginService extends AbstractRequest {
 	 * @param command
 	 * @return
 	 */
+	@ApiActions(action = ".proxy")
 	public CommandResponse proxy(Command command) {
 		CommandResponse commandResponse = new CommandResponse().setAction(CommandConst.ACTION_RES);
 		ErrorCode2 errCode = ErrorCode2.ERROR;
