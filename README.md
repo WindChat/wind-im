@@ -2,7 +2,7 @@
 [WindChat-风信](https://gitee.com/wind-chat/wind-im/blob/master/README.md)
 ====
 
-![输入图片说明]https://github.com/WindChat/wind-im/blob/master/WindChatLogo.jpg "WindChat.png")
+![输入图片说明](https://github.com/WindChat/wind-im/blob/master/WindChatLogo.jpg "WindChat.png")
 
 
 [![License](https://img.shields.io/badge/license-apache2-blue.svg)](LICENSE)
