@@ -2,7 +2,7 @@
 [WindChat-风信](https://gitee.com/wind-chat/wind-im/blob/master/README.md)
 ====
 
-<img src="https://github.com/WindChat/wind-im/blob/master/WindChatLogo.jpg" alt="WindChat.jpg" width=200 />
+<img src="https://images.gitee.com/uploads/images/2020/1030/003214_2ce45893_1566564.png" alt="WindChat.jpg" width=200 />
 
 
 [![License](https://img.shields.io/badge/license-apache2-blue.svg)](LICENSE)
@@ -140,7 +140,7 @@ WindChat 具有灵活、强大的扩展机制 `(“管理平台” 就是一个�
 
 **向我们提问**
 
->官方微信：<img src="https://images.gitee.com/uploads/images/2020/0215/213526_62461f9d_1566564.png" width=200>
+>官方微信：<img src="https://images.gitee.com/uploads/images/2020/1030/003752_de901b73_1566564.jpeg" width=200>
 
 > 联系邮件：an.guoyue254@gmail.com
 
@@ -149,6 +149,6 @@ WindChat 具有灵活、强大的扩展机制 `(“管理平台” 就是一个�
 
 开源本不易，如果你觉得对你有帮助，请捐赠以表示支持，感谢！
 
-<img src="https://images.gitee.com/uploads/images/2020/0511/223112_e93a61ab_1566564.png" width=200>
+<img src="https://images.gitee.com/uploads/images/2020/1030/003539_1f1b9765_1566564.jpeg" width=200>
 
 <img src="https://images.gitee.com/uploads/images/2020/0511/223222_9ac22d03_1566564.png" width=200>
