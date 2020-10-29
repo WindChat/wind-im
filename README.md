@@ -2,7 +2,7 @@
 [WindChat-风信](https://gitee.com/wind-chat/wind-im/blob/master/README.md)
 ====
 
-<img src="https://images.gitee.com/uploads/images/2020/1030/003214_2ce45893_1566564.png" alt="WindChat.jpg" width=200 />
+<img src="https://images.gitee.com/uploads/images/2020/1030/003214_2ce45893_1566564.png" alt="WindChat.png" width=200>
 
 
 [![License](https://img.shields.io/badge/license-apache2-blue.svg)](LICENSE)
